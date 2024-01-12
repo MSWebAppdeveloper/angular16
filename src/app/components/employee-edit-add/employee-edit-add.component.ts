@@ -1,19 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import {
   MAT_DIALOG_DATA,
   MatDialogModule,
   MatDialogRef,
 } from '@angular/material/dialog';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { FormBuilder } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { MatRadioModule } from '@angular/material/radio';
-import { EmployeeService } from 'src/app/services/employee.service';
-import { DialogRef } from '@angular/cdk/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CoreService } from 'src/app/core/core.service';
+import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
   selector: 'app-employee-edit-add',
@@ -26,6 +26,7 @@ import { CoreService } from 'src/app/core/core.service';
     MatRadioModule,
     MatSnackBarModule,
     MatFormFieldModule,
+    MatSelectModule
   ],
   templateUrl: './employee-edit-add.component.html',
   styleUrls: ['./employee-edit-add.component.css'],
@@ -47,7 +48,7 @@ export class EmployeeEditAddComponent implements OnInit {
     private dialogRef: MatDialogRef<EmployeeEditAddComponent>,
     private snackbar: CoreService,
     @Inject(MAT_DIALOG_DATA) public data: any
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.employeeFrom = this.fb.group({
@@ -85,6 +86,7 @@ export class EmployeeEditAddComponent implements OnInit {
             this.dialogRef.close(true);
           },
           error: (err: any) => {
+            this.snackbar.openSnackBar(`${err}`, 'error');
             console.log(err);
           },
         });

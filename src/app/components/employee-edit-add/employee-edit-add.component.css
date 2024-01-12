@@ -1,11 +1,35 @@
+/* Add styling to the overall form container */
+.form-container {
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(241, 232, 232, 0.1);
+  padding: 20px;
+}
+
+/* Style the input fields */
 input {
-  height: 30px;
-  width: 100%;
+  width: calc(100% - 2px);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 14px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  transition: border-color 0.3s;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+input:focus {
+  /* border-color: #3498db; */
+  border: 2px solid #3498db;
+
+
 }
 
 mat-form-field {
   width: 100%;
 }
+
 
 .d-flex {
   display: flex;
@@ -13,19 +37,63 @@ mat-form-field {
 }
 
 .mt-small {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
-/* .mat-mdc-radio-button ~ .mat-mdc-radio-button {
-  margin-left: 6px;
-} */
-
 .education {
-  width: 100%;
-  height: 30px;
+  width: calc(100% - 2px);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 14px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.education:focus {
+  border-color: #3498db;
+}
+
+
+.education option {
+  padding: 20px;
+}
+
+
+.education option:hover {
+  background-color: #3498db;
+  color: white;
 }
 
 .action-btn {
-  justify-content: end;
-  padding: 0px 15px 20px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 0;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+  background-color: #190bb8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #050b23;
+}
+
+.mdc-text-field {
+  border-top-left-radius: var(--mdc-shape-small, 4px);
+  border-top-right-radius: var(--mdc-shape-small, 4px);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  display: inline-flex;
+  align-items: baseline;
+  padding: 0px !important;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  will-change: opacity, transform, color;
 }

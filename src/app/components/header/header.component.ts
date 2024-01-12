@@ -13,9 +13,10 @@ import { EmployeeService } from 'src/app/services/employee.service';
 import { EmployeeEditAddComponent } from '../employee-edit-add/employee-edit-add.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CoreService } from 'src/app/core/core.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
+
   standalone: true,
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
@@ -42,16 +43,19 @@ export class HeaderComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private employeeService: EmployeeService,
-    private snackbar: CoreService
-  ) {}
+    private snackbar: CoreService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.getEmployeeList();
   }
-
+  onRowClick(employeeId: string): void {
+    // Navigate to the EmployeePieChartComponent with the employeeId parameter
+    this.router.navigate(['/employee-pie-chart', employeeId]);
+  }
   addEmployeeForm(): void {
     const dialogRef = this.dialog.open(EmployeeEditAddComponent);
-
     dialogRef.afterClosed().subscribe({
       next: (value) => {
         if (value) {
@@ -93,7 +97,7 @@ export class HeaderComponent implements OnInit {
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
       },
-      error: (err: any) => {},
+      error: (err: any) => { },
     });
   }
 
