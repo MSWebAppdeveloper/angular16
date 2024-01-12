@@ -54,7 +54,7 @@ export class EmployeeEditAddComponent implements OnInit {
       firstName: [''],
       lastName: [''],
       email: [''],
-      dob: [''],
+      address: [''],
       gender: [''],
       education: [''],
       company: [''],
