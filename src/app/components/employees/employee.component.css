@@ -1,0 +1,40 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 25%;
+}
+
+th {
+  background-color: #0b2f47;
+  color: #0b0b0b;
+
+}
+
+table tr:hover {
+  background-color: #0596cf;
+}
+
+td,
+th {
+  padding: 12px;
+  text-align: left;
+}
+
+.table-container {
+  max-width: 85%;
+  padding-top: 20px;
+  margin: 0 auto;
+  cursor: pointer;
+}
