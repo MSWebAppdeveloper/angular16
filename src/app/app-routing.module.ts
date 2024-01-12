@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { EmployeePieChartComponent } from './employee-pie-chart/employee-pie-chart.component';
-import { HeaderComponent } from './components/header/header.component';
+
+import { EmployeeComponent } from './components/employees/employee.component';
 
 const routes: Routes = [
-  { path: '', component: HeaderComponent },
-  { path: 'employee-pie-chart/:id', component: EmployeePieChartComponent },
+  { path: '', component: EmployeeComponent },
+
 ];
 
 @NgModule({
