@@ -23,6 +23,6 @@ import { EmployeePieChartComponent } from './employee-pie-chart/employee-pie-cha
   ],
   providers: [],
 
-  bootstrap: [AppComponent, EmployeePieChartComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

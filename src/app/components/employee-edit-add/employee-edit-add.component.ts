@@ -16,7 +16,6 @@ import { CoreService } from 'src/app/core/core.service';
 import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
-  selector: 'app-employee-edit-add',
   standalone: true,
   imports: [
     CommonModule,
